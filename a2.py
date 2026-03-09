@@ -133,6 +133,7 @@ def apply_gtv_optim(fl_net, avg_node_degree):
         avg_val_error /= n
         print(f"alpha = {alpha}: Average local validation error = {avg_val_error:.6f}")
 
+
 def main():
     fl_net, avg_node_degree = create_fl_net()
     apply_gtv_optim(fl_net, avg_node_degree)
