@@ -122,11 +122,11 @@ def apply_gtv_optim(fl_net, avg_node_degree):
             node = fl_net.nodes().get(node_idx)
 
             valset = node["valset"]
-            X_val = valset[:, 0:2]
+            x_val = valset[:, 0:2]
             y_val = valset[:, 2]
 
             model = node["model"]
-            pred = model.predict(X_val)
+            pred = model.predict(x_val)
             mse = np.mean((y_val - pred) ** 2)
             avg_val_error += (1 / valset.shape[0]) * mse
 
