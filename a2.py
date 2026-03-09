@@ -110,7 +110,7 @@ def apply_gtv_optim(fl_net, avg_node_degree):
     for alpha in [0.0, 1.0, 100.0]:
         w = gtv_min_block_coordinate(fl_net, alpha)
 
-        numerator = sum(np.linalg.norm(w_i - w_j) ** 2 for w_i, w_j in fl_net.edges())
+        numerator = sum(np.linalg.norm(w[i] - w[j]) ** 2 for i, j in fl_net.edges())
         denominator = sum(np.linalg.norm(w_i) ** 2 for w_i in w)
 
         var_model_params = (1 / avg_node_degree) * (numerator / denominator)
