@@ -106,7 +106,7 @@ def gtv_min_block_coordinate(fl_net, alpha):
     return w
 
 
-def apply_gvt_mean(fl_net, avg_node_degree):
+def apply_gtv_optim(fl_net, avg_node_degree):
     for alpha in [0.0, 1.0, 100.0]:
         w = gtv_min_block_coordinate(fl_net, alpha)
 
@@ -135,7 +135,7 @@ def apply_gvt_mean(fl_net, avg_node_degree):
 
 def main():
     fl_net, avg_node_degree = create_fl_net()
-    apply_gvt_mean(fl_net, avg_node_degree)
+    apply_gtv_optim(fl_net, avg_node_degree)
 
 
 if __name__ == '__main__':
